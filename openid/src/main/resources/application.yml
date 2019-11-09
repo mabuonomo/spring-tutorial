@@ -1,0 +1,19 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            provider: google
+            client-id: <<your-client-id>>
+            client-secret: <<your-client-secret>> 
+            client-authentication-method: basic
+            authorization-grant-type: authorization_code
+            scope:
+              - openid
+              - email
+              - profile
+              - https://www.googleapis.com/auth/tasks.readonly
+        provider:
+          google:
+            issuer-uri: https://accounts.google.com

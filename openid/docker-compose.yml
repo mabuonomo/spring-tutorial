@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+    spring-boot:
+        build:
+            context: .docker/
+            dockerfile: Dockerfile
+        volumes:
+            - './:/app'
+        working_dir: /app
+        command:
+            - sh
+            - run.sh
+        ports:
+            - '8080:8080'
